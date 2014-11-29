@@ -102,6 +102,14 @@ class Metadata
      */
     protected $url;
 
+
+    /**
+     * Maximum number of nesting levels
+     *
+     * @var integer
+     */
+    protected $maxDepth;
+
     /**
      * Constructor
      *
@@ -320,6 +328,12 @@ class Metadata
         return $this->url;
     }
 
+
+    public function getMaxDepth()
+    {
+        return $this->maxDepth;
+     }
+
     /**
      * Is a hydrator associated with this class?
      *
@@ -528,6 +542,15 @@ class Metadata
     public function setRouteParams(array $params)
     {
         $this->routeParams = $params;
+        return $this;
+    }
+
+    /**
+     * Set the maximum number of nesting levels
+     */
+    public function setMaxDepth($maxDepth)
+    {
+        $this->maxDepth = $maxDepth;
         return $this;
     }
 
